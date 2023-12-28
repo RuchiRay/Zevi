@@ -1,0 +1,46 @@
+@mixin flexContainer($direction: "row", $alignItems: "center", $justifyContent: "center") {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin padding($value) {
+    padding: $value;
+}
+
+@mixin paddingLeft($value) {
+    padding-left: $value;
+}
+
+@mixin paddingRight($value) {
+    padding-right: $value;
+}
+
+@mixin paddingBottom($value) {
+    margin-bottom: $value;
+}
+
+@mixin marginTop($value) {
+    margin-top: $value;
+}
+
+@mixin margin($value) {
+    margin: $value;
+}
+
+@mixin marginLeft($value) {
+    margin-left: $value;
+}
+
+@mixin marginRight($value) {
+    margin-right: $value;
+}
+
+@mixin marginBottom($value) {
+    margin-bottom: $value;
+}
+
+@mixin marginTop($value) {
+    margin-top: $value;
+}
