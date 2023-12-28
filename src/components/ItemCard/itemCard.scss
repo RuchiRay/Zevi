@@ -15,7 +15,7 @@
             object-fit: cover;
         }
 
-        .heart-icon {
+        .like-icon {
             position: absolute;
 
             top: 16px;
@@ -23,6 +23,8 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+
+
 
         .heart-icon.red {
             color: $red;

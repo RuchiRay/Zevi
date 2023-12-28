@@ -22,7 +22,14 @@ export const Results = () => {
         <Filters />
         <div className="results-wrapper flex-wrap">
           {data.map((item) => {
-            return <ItemCard data={item} key={item.id} />;
+            return (
+              <ItemCard
+                setdata={setdata}
+                data={data}
+                item={item}
+                key={item.id}
+              />
+            );
           })}
         </div>
       </div>
