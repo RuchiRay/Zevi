@@ -1,0 +1,25 @@
+@use "../../sass/abstract" as *;
+
+.results-container {
+    position: relative;
+    @include padding(20px);
+
+    @include flexContainer(column, center, center);
+
+    @include xxl {
+        @include padding(40px);
+    }
+
+    .search-container {
+        input {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        right: 20px;
+
+
+    }
+}

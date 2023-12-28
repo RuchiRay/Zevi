@@ -7,7 +7,7 @@ type SearchProps = {
 
 export const Search = ({ setOpenTrending }: SearchProps) => {
   return (
-    <div className="search-container margin-top">
+    <div className="search-container ">
       <input
         type="text"
         name=""

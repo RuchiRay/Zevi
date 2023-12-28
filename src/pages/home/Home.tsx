@@ -8,6 +8,7 @@ export const Home = () => {
   return (
     <div className="home-container">
       <Logo />
+      <div className="margin-top"></div>
       <Search setOpenTrending={setOpenTrending} />
       {openTrending && <Trending />}
     </div>
