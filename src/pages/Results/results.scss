@@ -19,7 +19,7 @@
     .logo-wrapper {
         position: absolute;
         right: 20px;
-
+        top: 10px;
 
     }
 
@@ -34,6 +34,12 @@
 
     .filter-result-wrapper {
         @include flexContainer(row, flex-start, flex-start);
-        @include marginTop(40px)
+        @include marginTop(40px);
+        gap: 80px
+    }
+
+    .results-wrapper {
+        @include flexContainer(row, flex-start, flex-start);
+        gap: 40px;
     }
 }

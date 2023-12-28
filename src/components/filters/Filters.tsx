@@ -18,11 +18,13 @@ export const Filters = () => {
         filterType="Brand"
         filterList={BrandsList}
       />
+      <div className="divider"></div>
       <FilterDropdown
         key={"price-range"}
         filterType="Price Range"
         filterList={PriceRangeList}
       />
+      <div className="divider"></div>
     </div>
   );
 };

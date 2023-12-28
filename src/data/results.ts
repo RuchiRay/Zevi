@@ -13,7 +13,20 @@ import img12 from '../images/dress12.jpg'
 import img13 from '../images/dress13.jpg'
 import img14 from '../images/dress14.jpg'
 
-export const results = [
+export  interface Results{
+    id:number,
+   img:typeof img1 | typeof img10,
+   title:string,
+   oldPrice:number,
+   newPrice:number,
+   rating:number,
+   totalRating:number,
+   wishlisted:boolean,
+   brand:string
+
+}
+
+export const results:Results[] = [
 {
     id:1,
     img:img1,
@@ -26,7 +39,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:2,
     img:img2,
     title:"Stripped sweater",
     oldPrice:1999,
@@ -37,7 +50,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:3,
     img:img3,
     title:"High waise trousers",
     oldPrice:700,
@@ -48,7 +61,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:4,
     img:img4,
     title:"High neck pullover ",
     oldPrice:650,
@@ -59,7 +72,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:5,
     img:img5,
     title:"Satin jumpsuit",
     oldPrice:1299,
@@ -70,7 +83,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:6,
     img:img6,
     title:"Offshoulder top ",
     oldPrice:699,
@@ -81,7 +94,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:7,
     img:img7,
     title:"Round neck cotton Tee",
     oldPrice:2400,
@@ -92,7 +105,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:8,
     img:img8,
     title:"yellow cord-set",
     oldPrice:999,
@@ -103,7 +116,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:9,
     img:img9,
     title:"Graphic tee",
     oldPrice:699,
@@ -114,7 +127,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:10,
     img:img10,
     title:"Corset and yellow pants",
     oldPrice:1699,
@@ -125,7 +138,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:11,
     img:img11,
     title:"Pink floral dress",
     oldPrice:849,
@@ -136,7 +149,7 @@ export const results = [
     brand:"Mango"
 },
 {
-    id:1,
+    id:12,
     img:img12,
     title:"Black floral dress",
     oldPrice:1349,
@@ -147,7 +160,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:13,
     img:img13,
     title:"black twirl skirt",
     oldPrice:799,
@@ -158,7 +171,7 @@ export const results = [
     brand:"H&M"
 },
 {
-    id:1,
+    id:14,
     img:img14,
     title:"Cargo",
     oldPrice:1759,

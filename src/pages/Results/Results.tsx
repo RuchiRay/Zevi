@@ -4,6 +4,7 @@ import { Search } from "../../components/search/Search";
 import { Logo } from "../../components/logo/Logo";
 import { results } from "../../data/results";
 import { Filters } from "../../components/filters/Filters";
+import { ItemCard } from "../../components/ItemCard/ItemCard";
 export const Results = () => {
   const [data, setdata] = useState(results);
   console.log(data);
@@ -19,7 +20,11 @@ export const Results = () => {
       </div>
       <div className="filter-result-wrapper w-full">
         <Filters />
-        <div className="results-wrapper">results</div>
+        <div className="results-wrapper flex-wrap">
+          {data.map((item) => {
+            return <ItemCard data={item} key={item.id} />;
+          })}
+        </div>
       </div>
     </div>
   );
