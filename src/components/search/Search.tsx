@@ -1,9 +1,20 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "./search.scss";
-export const Search = () => {
+
+type SearchProps = {
+  setOpenTrending: Dispatch<SetStateAction<boolean>>;
+};
+
+export const Search = ({ setOpenTrending }: SearchProps) => {
   return (
     <div className="search-container">
-      <input type="text" name="" id="" placeholder="Search" />
+      <input
+        type="text"
+        name=""
+        id=""
+        onClick={() => setOpenTrending(true)}
+        placeholder="Search"
+      />
     </div>
   );
 };

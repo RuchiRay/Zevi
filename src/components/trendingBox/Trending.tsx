@@ -1,8 +1,9 @@
 import React from "react";
 import "./trending.scss";
 import { trending } from "../../data/trending";
+
 export const Trending = () => {
-  const suggestions = [
+  const suggestions: string[] = [
     "Striped shirt dress",
     "Satin shirts",
     "Denim jumpsuit",
