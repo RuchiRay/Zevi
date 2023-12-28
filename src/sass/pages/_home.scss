@@ -1,6 +1,13 @@
-.home-container{
+@use '../abstract/mixins' as *;
+
+.home-container {
     width: 100%;
     height: 100vh;
     min-height: 982px;
     background: url('../../images/home.jpg') center center no-repeat;
+
+    .logo-wrapper {
+        @include flexContainer(row, center, flex-end);
+        @include padding(20px)
+    }
 }
