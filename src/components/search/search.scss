@@ -3,7 +3,16 @@
 .search-container {
     width: 100%;
     max-width: 900px;
-    @include marginTop(100px);
+    position: relative;
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 40px;
+        font-size: 2rem;
+        color: gray;
+    }
 
     input {
         width: 100%;
@@ -20,4 +29,8 @@
         height: 65px;
 
     }
+}
+
+.search-container.margin-top {
+    @include marginTop(100px)
 }
