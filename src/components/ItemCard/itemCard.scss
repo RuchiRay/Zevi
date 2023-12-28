@@ -73,6 +73,10 @@
         color: $yellow;
     }
 
+    .empty {
+        color: rgba(0, 0, 0, 0.4);
+    }
+
     .total-rating {
         font-size: 0.875rem;
     }

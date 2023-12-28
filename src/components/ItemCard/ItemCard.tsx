@@ -35,7 +35,7 @@ export const ItemCard = ({ data }: ItemCardProps) => {
             return (
               <div
                 key={index}
-                className={index <= data.rating ? "filled" : "empty"}
+                className={index < data.rating ? "filled" : "empty"}
               >
                 <FaStar />
               </div>
