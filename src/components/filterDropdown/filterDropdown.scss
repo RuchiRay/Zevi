@@ -1,0 +1,23 @@
+@use "../../sass/abstract" as *;
+
+.filter-dropdown {
+    .filter-dropdown-header {
+        @include flexContainer(row, center, space-between);
+        @include marginBottom(25px)
+    }
+
+    .filter-type {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+    }
+
+    .filter-list {
+        @include flexContainer(column, flex-start, flex-start);
+        gap: 15px;
+    }
+
+    .input-wrapper {
+        gap: 10px;
+
+    }
+}

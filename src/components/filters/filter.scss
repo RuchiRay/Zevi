@@ -1,0 +1,7 @@
+@use "../../sass/abstract" as *;
+
+.filters-container {
+    width: 269px;
+    @include flexContainer(column, flex-start, flex-start);
+    gap: 20px
+}

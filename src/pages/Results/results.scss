@@ -22,4 +22,18 @@
 
 
     }
+
+    .title {
+        font-size: 1.8rem;
+        @include marginTop(48px);
+
+        @include xxl {
+            font-size: 2.5rem;
+        }
+    }
+
+    .filter-result-wrapper {
+        @include flexContainer(row, flex-start, flex-start);
+        @include marginTop(40px)
+    }
 }

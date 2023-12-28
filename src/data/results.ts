@@ -22,7 +22,8 @@ export const results = [
     newPrice:1349,
     rating:5,
     totalRating:210,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -32,7 +33,8 @@ export const results = [
     newPrice:1749,
     rating:4,
     totalRating:212,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -42,7 +44,8 @@ export const results = [
     newPrice:449,
     rating:3,
     totalRating:102,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -52,7 +55,8 @@ export const results = [
     newPrice:399,
     rating:4,
     totalRating:14,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -62,7 +66,8 @@ export const results = [
     newPrice:1199,
     rating:1,
     totalRating:12,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -72,7 +77,8 @@ export const results = [
     newPrice:349,
     rating:5,
     totalRating:23,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -82,7 +88,8 @@ export const results = [
     newPrice:2100,
     rating:3,
     totalRating:45,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -92,7 +99,8 @@ export const results = [
     newPrice:899,
     rating:4,
     totalRating:78,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -102,7 +110,8 @@ export const results = [
     newPrice:599,
     rating:3,
     totalRating:34,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -112,7 +121,8 @@ export const results = [
     newPrice:1399,
     rating:2,
     totalRating:21,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -122,7 +132,8 @@ export const results = [
     newPrice:749,
     rating:4,
     totalRating:67,
-    wishlisted:false
+    wishlisted:false,
+    brand:"Mango"
 },
 {
     id:1,
@@ -132,7 +143,8 @@ export const results = [
     newPrice:1149,
     rating:3,
     totalRating:13,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -142,7 +154,8 @@ export const results = [
     newPrice:499,
     rating:5,
     totalRating:87,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 {
     id:1,
@@ -152,6 +165,7 @@ export const results = [
     newPrice:1449,
     rating:2,
     totalRating:130,
-    wishlisted:false
+    wishlisted:false,
+    brand:"H&M"
 },
 ]
