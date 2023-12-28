@@ -1,13 +1,14 @@
-@use '../abstract/mixins' as *;
+@use '../../sass/abstract/mixins' as *;
 
 .home-container {
     width: 100%;
     height: 100vh;
     min-height: 982px;
     background: url('../../images/home.jpg') center center no-repeat;
+    @include padding(20px);
+    @include flexContainer(column, center, flex-start);
 
     .logo-wrapper {
         @include flexContainer(row, center, flex-end);
-        @include padding(20px)
     }
 }

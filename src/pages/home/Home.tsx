@@ -1,5 +1,7 @@
 import React from "react";
-import logo from "../images/zeviLogo.png";
+import logo from "../../images/zeviLogo.png";
+import { Search } from "../../components/search/Search";
+import "./home.scss";
 export const Home = () => {
   return (
     <div className="home-container">
@@ -8,6 +10,7 @@ export const Home = () => {
           <img src={logo} alt="" />
         </div>
       </div>
+      <Search />
     </div>
   );
 };

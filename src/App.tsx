@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/index.scss";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/home/Home";
 function App() {
   return (
     <div className="App">
