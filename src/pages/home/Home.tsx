@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../images/zeviLogo.png";
 import { Search } from "../../components/search/Search";
 import "./home.scss";
+import { Trending } from "../../components/trendingBox/Trending";
 export const Home = () => {
   return (
     <div className="home-container">
@@ -11,6 +12,7 @@ export const Home = () => {
         </div>
       </div>
       <Search />
+      <Trending />
     </div>
   );
 };

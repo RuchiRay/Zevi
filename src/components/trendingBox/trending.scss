@@ -1,0 +1,29 @@
+@use "../../sass/abstract" as *;
+
+.trending-container {
+    background-color: white;
+    @include padding(40px);
+
+    @include marginTop(17px);
+
+    .heading {
+        font-size: 1.375rem;
+    }
+
+    .card-container {
+        @include flexContainer;
+        @include marginTop(24px);
+        gap: 30px;
+
+        .trend-title {
+            font-size: 0.875rem;
+            @include marginTop(14px)
+        }
+    }
+
+    .suggestions-list {
+        @include marginTop(40px);
+        @include flexContainer(column, flex-start, flex-start);
+        gap: 12px;
+    }
+}
