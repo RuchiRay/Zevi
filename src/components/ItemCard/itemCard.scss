@@ -31,6 +31,22 @@
         .heart-icon.transparent {
             color: white;
         }
+
+        &:hover .view {
+            opacity: 1;
+        }
+    }
+
+    .view {
+        background-color: $purple;
+        color: white;
+        @include flexContainer(row, center, center);
+        @include padding(12px);
+        font-size: 1.25rem;
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
     }
 
     .item-info {

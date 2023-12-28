@@ -22,6 +22,7 @@ export const ItemCard = ({ data }: ItemCardProps) => {
             <FaRegHeart />
           </div>
         )}
+        <div className="view w-full font-semi-bold">View Product</div>
       </div>
       <div className="item-info">
         <p className="item-name">{data.title}</p>
