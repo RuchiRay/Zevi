@@ -1,0 +1,5 @@
+@use '../../sass/abstract/mixins' as *;
+
+.logo-wrapper {
+    @include flexContainer(row, center, flex-end);
+}
