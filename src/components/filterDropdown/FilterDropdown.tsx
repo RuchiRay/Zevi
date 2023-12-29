@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import "./filterDropdown.scss";
 
 import { FaAngleDown } from "react-icons/fa6";
@@ -28,31 +28,33 @@ export const FilterDropdown = ({
       return { ...prev, [filterType]: newFilterList };
     });
   };
-
+  const [showFilters, setShowFilters] = useState(true);
   return (
     <div className="filter-dropdown w-full">
       <div className="filter-dropdown-header">
         <p className="filter-type"> {filterType}</p>
-        <div className="down-icon">
+        <div className="down-icon" onClick={() => setShowFilters(!showFilters)}>
           <FaAngleDown />
         </div>
       </div>
-      <div className="filter-list">
-        {filterList.map((item) => {
-          return (
-            <div key={item.name} className="flex items-center input-wrapper">
-              <input
-                type="checkbox"
-                name=""
-                onChange={() => handleChange(item.name, filterType)}
-                checked={item.checked}
-                id=""
-              />{" "}
-              <p className="font-light"> {item.name}</p>
-            </div>
-          );
-        })}
-      </div>
+      {showFilters && (
+        <div className="filter-list">
+          {filterList.map((item) => {
+            return (
+              <div key={item.name} className="flex items-center input-wrapper">
+                <input
+                  type="checkbox"
+                  name=""
+                  onChange={() => handleChange(item.name, filterType)}
+                  checked={item.checked}
+                  id=""
+                />{" "}
+                <p className="font-light"> {item.name}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

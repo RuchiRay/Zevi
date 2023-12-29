@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import "./ratingFilter.scss";
 import { FaAngleDown, FaStar } from "react-icons/fa6";
 import { StarsList } from "../../pages/Results/types";
@@ -19,39 +19,43 @@ export const RatingFilter = ({
     });
     setStars(newStarsList);
   };
+  const [showFilters, setShowFilters] = useState(true);
+
   return (
     <div className="filter-dropdown w-full">
       <div className="filter-dropdown-header">
         <p className="filter-type"> {filterType}</p>
-        <div className="down-icon">
+        <div className="down-icon" onClick={() => setShowFilters(!showFilters)}>
           <FaAngleDown />
         </div>
       </div>
-      <div className="filter-list">
-        {stars.map((item, index) => {
-          return (
-            <div key={index} className="star-wrapper">
-              <input
-                type="checkbox"
-                name=""
-                onChange={() => handlechange(item.number)}
-                checked={item.checked}
-                id=""
-              />
-              {[...Array(5)].map((_, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={index < item.number ? "filled" : "empty"}
-                  >
-                    <FaStar />
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
+      {showFilters && (
+        <div className="filter-list">
+          {stars.map((item, index) => {
+            return (
+              <div key={index} className="star-wrapper">
+                <input
+                  type="checkbox"
+                  name=""
+                  onChange={() => handlechange(item.number)}
+                  checked={item.checked}
+                  id=""
+                />
+                {[...Array(5)].map((_, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className={index < item.number ? "filled" : "empty"}
+                    >
+                      <FaStar />
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
