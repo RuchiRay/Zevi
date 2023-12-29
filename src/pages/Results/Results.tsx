@@ -75,16 +75,18 @@ export const Results = () => {
           setStars={setStars}
         />
         <div className="results-wrapper flex-wrap">
-          {data.map((item) => {
-            return (
-              <ItemCard
-                setdata={setdata}
-                data={data}
-                item={item}
-                key={item.id}
-              />
-            );
-          })}
+          {data.length > 0
+            ? data.map((item) => {
+                return (
+                  <ItemCard
+                    setdata={setdata}
+                    data={data}
+                    item={item}
+                    key={item.id}
+                  />
+                );
+              })
+            : "No item available for current filters!"}
         </div>
       </div>
     </div>
