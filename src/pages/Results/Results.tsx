@@ -5,7 +5,7 @@ import { Logo } from "../../components/logo/Logo";
 import { results } from "../../data/results";
 import { Filters } from "../../components/filters/Filters";
 import { ItemCard } from "../../components/ItemCard/ItemCard";
-import { FilterList } from "./types";
+import { FilterList, StarsList } from "./types";
 export const Results = () => {
   const [data, setdata] = useState(results);
   const BrandsList: FilterList[] = [
@@ -22,10 +22,15 @@ export const Results = () => {
     brands: [...BrandsList],
     priceRange: [...PriceRangeList],
   });
-
+  const [stars, setStars] = useState<StarsList[]>([
+    { number: 5, checked: false },
+    { number: 4, checked: false },
+    { number: 3, checked: false },
+    { number: 2, checked: false },
+    { number: 1, checked: false },
+  ]);
   useEffect(() => {
     let newData = [...results];
-    console.log(newData, "new data");
 
     const selectedBrands = filters.brands
       .filter((item) => item.checked)
@@ -33,10 +38,11 @@ export const Results = () => {
     const selectedPriceRange = filters.priceRange
       .filter((item) => item.checked)
       .map((item) => item.name);
-    console.log(selectedBrands, selectedPriceRange);
+    const selectedRatings = stars
+      .filter((item) => item.checked)
+      .map((item) => item.number);
     if (selectedBrands.length > 0)
       newData = newData.filter((item) => selectedBrands.includes(item.brand));
-    console.log(newData, "after filter");
     if (selectedPriceRange.length > 0)
       newData = newData.filter((item) =>
         selectedPriceRange.some((range) => {
@@ -45,9 +51,10 @@ export const Results = () => {
           return item.newPrice >= minPrice && item.newPrice <= maxPrice;
         })
       );
-
+    if (selectedRatings.length > 0)
+      newData = newData.filter((item) => selectedRatings.includes(item.rating));
     setdata(newData);
-  }, [filters]);
+  }, [filters, stars]);
 
   return (
     <div className="results-container">
@@ -64,6 +71,8 @@ export const Results = () => {
           setFilters={setFilters}
           results={results}
           setdata={setdata}
+          stars={stars}
+          setStars={setStars}
         />
         <div className="results-wrapper flex-wrap">
           {data.map((item) => {

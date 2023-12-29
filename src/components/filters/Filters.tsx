@@ -1,8 +1,9 @@
 import React, { Dispatch, SetStateAction } from "react";
 import "./filter.scss";
 import { FilterDropdown } from "../filterDropdown/FilterDropdown";
-import { FilterList } from "../../pages/Results/types";
+import { FilterList, StarsList } from "../../pages/Results/types";
 import { Data } from "../../data/results";
+import { RatingFilter } from "../ratingFilter/RatingFilter";
 
 export type FiltersObject = {
   brands: FilterList[];
@@ -11,7 +12,8 @@ export type FiltersObject = {
 
 type FiltersProps = {
   filters: FiltersObject;
-
+  stars: StarsList[];
+  setStars: Dispatch<SetStateAction<StarsList[]>>;
   setFilters: Dispatch<SetStateAction<FiltersObject>>;
   results: Data[];
   setdata: Dispatch<SetStateAction<Data[]>>;
@@ -22,6 +24,8 @@ export const Filters = ({
   setFilters,
   results,
   setdata,
+  stars,
+  setStars,
 }: FiltersProps) => {
   return (
     <div className="filters-container">
@@ -41,6 +45,7 @@ export const Filters = ({
         setdata={setdata}
       />
       <div className="divider"></div>
+      <RatingFilter stars={stars} setStars={setStars} filterType="Ratings" />
     </div>
   );
 };
