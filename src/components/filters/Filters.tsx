@@ -1,28 +1,42 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "./filter.scss";
 import { FilterDropdown } from "../filterDropdown/FilterDropdown";
-export const Filters = () => {
-  const BrandsList = [
-    { name: "Mango", checked: false },
-    { name: "H&M", checked: false },
-  ];
-  const PriceRangeList = [
-    { name: "Under 500", checked: false },
-    { name: "500 to 1000", checked: false },
-    { name: "1000 to 3000", checked: false },
-  ];
+import { FilterList } from "../../pages/Results/types";
+import { Results } from "../../data/results";
+
+type FiltersProps = {
+  brandsFilter: FilterList[];
+  priceRangeFilter: FilterList[];
+  setBrandsFilter: Dispatch<SetStateAction<FilterList[]>>;
+  setPriceRangeFilter: Dispatch<SetStateAction<FilterList[]>>;
+  results: Results[];
+  setdata: Dispatch<SetStateAction<Results[]>>;
+};
+
+export const Filters = ({
+  brandsFilter,
+  priceRangeFilter,
+  setBrandsFilter,
+  setPriceRangeFilter,
+  results,
+  setdata,
+}: FiltersProps) => {
   return (
     <div className="filters-container">
       <FilterDropdown
         key={"brand"}
         filterType="Brand"
-        filterList={BrandsList}
+        filterList={brandsFilter}
+        setFilter={setBrandsFilter}
+        setdata={setdata}
       />
       <div className="divider"></div>
       <FilterDropdown
         key={"price-range"}
         filterType="Price Range"
-        filterList={PriceRangeList}
+        filterList={priceRangeFilter}
+        setFilter={setPriceRangeFilter}
+        setdata={setdata}
       />
       <div className="divider"></div>
     </div>
