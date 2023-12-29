@@ -35,7 +35,11 @@
     .filter-result-wrapper {
         @include flexContainer(row, flex-start, flex-start);
         @include marginTop(40px);
-        gap: 80px
+        gap: 80px;
+
+        @include sm {
+            flex-wrap: wrap;
+        }
     }
 
     .results-wrapper {

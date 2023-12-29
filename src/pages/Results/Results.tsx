@@ -65,7 +65,7 @@ export const Results = () => {
       <div className="w-full">
         <p className="title">Search Results</p>
       </div>
-      <div className="filter-result-wrapper w-full">
+      <div className="filter-result-wrapper  w-full">
         <Filters
           filters={filters}
           setFilters={setFilters}

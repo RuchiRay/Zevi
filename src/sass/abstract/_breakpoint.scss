@@ -2,7 +2,8 @@ $breakpoints: (
     xxl: 1560px,
     xl:1280px,
     lg: 1024px,
-    md: 768px
+    md: 768px,
+    sm:650px
 );
 
 @mixin xxl {
