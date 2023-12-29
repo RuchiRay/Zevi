@@ -18,16 +18,36 @@ export const Results = () => {
     { name: "1000 to 3000", checked: false },
   ];
 
-  const [brandsFilter, setBrandsFilter] = useState<FilterList[]>([
-    ...BrandsList,
-  ]);
-  const [priceRangeFilter, setPriceRangeFilter] = useState<FilterList[]>([
-    ...PriceRangeList,
-  ]);
+  const [filters, setFilters] = useState({
+    brands: [...BrandsList],
+    priceRange: [...PriceRangeList],
+  });
 
   useEffect(() => {
-    const filteredData = data.filter((item) => {});
-  }, [brandsFilter, data]);
+    let newData = [...results];
+    console.log(newData, "new data");
+
+    const selectedBrands = filters.brands
+      .filter((item) => item.checked)
+      .map((item) => item.name);
+    const selectedPriceRange = filters.priceRange
+      .filter((item) => item.checked)
+      .map((item) => item.name);
+    console.log(selectedBrands, selectedPriceRange);
+    if (selectedBrands.length > 0)
+      newData = newData.filter((item) => selectedBrands.includes(item.brand));
+    console.log(newData, "after filter");
+    if (selectedPriceRange.length > 0)
+      newData = newData.filter((item) =>
+        selectedPriceRange.some((range) => {
+          if (range === "Under 500") return item.newPrice < 500;
+          const [minPrice, maxPrice] = range.split("to").map(Number);
+          return item.newPrice >= minPrice && item.newPrice <= maxPrice;
+        })
+      );
+
+    setdata(newData);
+  }, [filters]);
 
   return (
     <div className="results-container">
@@ -40,10 +60,8 @@ export const Results = () => {
       </div>
       <div className="filter-result-wrapper w-full">
         <Filters
-          brandsFilter={brandsFilter}
-          priceRangeFilter={priceRangeFilter}
-          setBrandsFilter={setBrandsFilter}
-          setPriceRangeFilter={setPriceRangeFilter}
+          filters={filters}
+          setFilters={setFilters}
           results={results}
           setdata={setdata}
         />

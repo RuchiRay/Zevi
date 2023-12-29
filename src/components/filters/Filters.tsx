@@ -2,22 +2,24 @@ import React, { Dispatch, SetStateAction } from "react";
 import "./filter.scss";
 import { FilterDropdown } from "../filterDropdown/FilterDropdown";
 import { FilterList } from "../../pages/Results/types";
-import { Results } from "../../data/results";
+import { Data } from "../../data/results";
+
+export type FiltersObject = {
+  brands: FilterList[];
+  priceRange: FilterList[];
+};
 
 type FiltersProps = {
-  brandsFilter: FilterList[];
-  priceRangeFilter: FilterList[];
-  setBrandsFilter: Dispatch<SetStateAction<FilterList[]>>;
-  setPriceRangeFilter: Dispatch<SetStateAction<FilterList[]>>;
-  results: Results[];
-  setdata: Dispatch<SetStateAction<Results[]>>;
+  filters: FiltersObject;
+
+  setFilters: Dispatch<SetStateAction<FiltersObject>>;
+  results: Data[];
+  setdata: Dispatch<SetStateAction<Data[]>>;
 };
 
 export const Filters = ({
-  brandsFilter,
-  priceRangeFilter,
-  setBrandsFilter,
-  setPriceRangeFilter,
+  filters,
+  setFilters,
   results,
   setdata,
 }: FiltersProps) => {
@@ -25,17 +27,17 @@ export const Filters = ({
     <div className="filters-container">
       <FilterDropdown
         key={"brand"}
-        filterType="Brand"
-        filterList={brandsFilter}
-        setFilter={setBrandsFilter}
+        filterType="brands"
+        filterList={filters.brands}
+        setFilters={setFilters}
         setdata={setdata}
       />
       <div className="divider"></div>
       <FilterDropdown
         key={"price-range"}
-        filterType="Price Range"
-        filterList={priceRangeFilter}
-        setFilter={setPriceRangeFilter}
+        filterType="priceRange"
+        filterList={filters.priceRange}
+        setFilters={setFilters}
         setdata={setdata}
       />
       <div className="divider"></div>

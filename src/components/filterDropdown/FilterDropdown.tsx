@@ -3,27 +3,30 @@ import "./filterDropdown.scss";
 
 import { FaAngleDown } from "react-icons/fa6";
 import { FilterList } from "../../pages/Results/types";
-import { Results } from "../../data/results";
+import { Data } from "../../data/results";
+import { FiltersObject } from "../filters/Filters";
 
 type FilterDropdownProps = {
   filterType: string;
   filterList: FilterList[];
-  setFilter: Dispatch<SetStateAction<FilterList[]>>;
-  setdata: Dispatch<SetStateAction<Results[]>>;
+  setFilters: Dispatch<SetStateAction<FiltersObject>>;
+  setdata: Dispatch<SetStateAction<Data[]>>;
 };
 
 export const FilterDropdown = ({
   filterType,
   filterList,
-  setFilter,
+  setFilters,
   setdata,
 }: FilterDropdownProps) => {
-  const handleChange = (name: string) => {
+  const handleChange = (name: string, filterType: string) => {
     const newFilterList: FilterList[] = filterList.map((item) => {
       if (item.name === name) return { ...item, checked: !item.checked };
       else return item;
     });
-    setFilter(newFilterList);
+    setFilters((prev) => {
+      return { ...prev, [filterType]: newFilterList };
+    });
   };
 
   return (
@@ -37,11 +40,11 @@ export const FilterDropdown = ({
       <div className="filter-list">
         {filterList.map((item) => {
           return (
-            <div className="flex items-center input-wrapper">
+            <div key={item.name} className="flex items-center input-wrapper">
               <input
                 type="checkbox"
                 name=""
-                onChange={() => handleChange(item.name)}
+                onChange={() => handleChange(item.name, filterType)}
                 checked={item.checked}
                 id=""
               />{" "}

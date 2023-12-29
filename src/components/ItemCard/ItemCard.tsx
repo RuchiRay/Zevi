@@ -1,11 +1,11 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { Results } from "../../data/results";
+import { Data } from "../../data/results";
 import "./itemCard.scss";
 import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa6";
 type ItemCardProps = {
-  item: Results;
-  data: Results[];
-  setdata: Dispatch<SetStateAction<Results[]>>;
+  item: Data;
+  data: Data[];
+  setdata: Dispatch<SetStateAction<Data[]>>;
 };
 
 export const ItemCard = ({ item, data, setdata }: ItemCardProps) => {

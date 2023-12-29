@@ -13,7 +13,7 @@ import img12 from '../images/dress12.jpg'
 import img13 from '../images/dress13.jpg'
 import img14 from '../images/dress14.jpg'
 
-export  interface Results{
+export  interface Data{
     id:number,
    img:typeof img1 | typeof img10,
    title:string,
@@ -26,7 +26,7 @@ export  interface Results{
 
 }
 
-export const results:Results[] = [
+export const results:Data[] = [
 {
     id:1,
     img:img1,
