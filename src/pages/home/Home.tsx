@@ -6,6 +6,7 @@ import { Logo } from "../../components/logo/Logo";
 export const Home = () => {
   const [openTrending, setOpenTrending] = useState(false);
   console.log("test");
+  console.log("test 2");
 
   return (
     <div className="home-container">
