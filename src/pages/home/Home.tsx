@@ -9,7 +9,7 @@ export const Home = () => {
     <div className="home-container">
       <Logo />
       <div className="margin-top"></div>
-      <Search setOpenTrending={setOpenTrending} />
+      {/* <Search setOpenTrending={setOpenTrending} /> */}
       {openTrending && <Trending />}
     </div>
   );
