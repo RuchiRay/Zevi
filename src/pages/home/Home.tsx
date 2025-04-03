@@ -10,7 +10,7 @@ export const Home = () => {
       <Logo />
       <div className="margin-top"></div>
       <Search setOpenTrending={setOpenTrending} />
-      {/* {openTrending && <Trending />} */}
+      {openTrending && <Trending />}
     </div>
   );
 };
