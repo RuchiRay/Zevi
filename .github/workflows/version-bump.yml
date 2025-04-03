@@ -12,7 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # Ensures full commit history is fetched
+          ref: ${{ github.head_ref }} # Checkout the actual PR branch
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -20,13 +21,20 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci # Ensures a clean install
 
       - name: Auto-increment version
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          npm version patch  # Change to minor/major if needed
+
+          # Ensure we are on the correct branch
+          git checkout ${{ github.head_ref }}
+
+          # Update package.json version
+          npm version patch --no-git-tag-version
+
+          # Commit and push changes
           git add package.json package-lock.json
-          git commit -m "chore: bump version [skip ci]"
-          git push
+          git commit -m "chore: bump version [skip ci]" || echo "No changes to commit"
+          git push origin ${{ github.head_ref }} || echo "No changes to push"
