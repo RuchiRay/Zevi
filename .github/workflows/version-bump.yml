@@ -1,0 +1,32 @@
+name: Auto Version Bump
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Auto-increment version
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          npm version patch  # Change to minor/major if needed
+          git add package.json package-lock.json
+          git commit -m "chore: bump version [skip ci]"
+          git push
